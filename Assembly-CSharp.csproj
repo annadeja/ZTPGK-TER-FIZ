@@ -60,7 +60,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\SphereMovement.cs" />
+    <Compile Include="Assets\Scripts\BallMovement.cs" />
+    <Compile Include="Assets\Scripts\GoalBehavior.cs" />
+    <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\TerrainAnim.cs" />
     <Reference Include="UnityEngine.Purchasing">
       <HintPath>D:/Program Files/Unity/ZTPGK-TER-FIZ/Library/ScriptAssemblies/UnityEngine.Purchasing.dll</HintPath>
