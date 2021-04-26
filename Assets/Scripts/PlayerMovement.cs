@@ -6,9 +6,10 @@ public class PlayerMovement : MonoBehaviour
 {
     private Transform ball;
     private Vector3 displacement;
+    private Vector3 startingPosition;
     private CharacterController charControl;
     private int movementSpeed = 10;
-    [SerializeField] private bool isPlayerOne;
+    public bool isPlayerOne = true;
     public bool movementEnabled = true;
     // Start is called before the first frame update
     void Start()
@@ -16,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
         ball = gameObject.GetComponentInChildren<Transform>();
         charControl = gameObject.GetComponentInChildren<CharacterController>();
         displacement = new Vector3(0, 0, 0);
+        startingPosition = transform.position;
     }
 
     // Update is called once per frame
@@ -40,5 +42,10 @@ public class PlayerMovement : MonoBehaviour
             displacement = transform.TransformDirection(displacement);
             charControl.Move(displacement * Time.deltaTime);
         }
+    }
+
+    public void resetPosition()
+    {
+        transform.position = startingPosition;
     }
 }

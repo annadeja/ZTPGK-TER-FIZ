@@ -46,7 +46,6 @@ public class TerrainAnim : MonoBehaviour
             for (int j = 0; j < sign.texture.height; j++)
             {
                 grayscale = 255.0f - (float)(pixelArray[i * sign.texture.width + j].r + pixelArray[i * sign.texture.width + j].g + pixelArray[i * sign.texture.width + j].b) / 3.0f;
-                //Debug.Log(grayscale / 250.0f);
                 grayscale /= 10000.0f;
                 if (grayscale != 0.0f)
                     terrHeights[i, j] += grayscale;
@@ -138,9 +137,7 @@ public class TerrainAnim : MonoBehaviour
                 {
                     calculatedHeight += Math.Sin(Time.time * harmonicFrequencies[k] + distance / 100) / 2f / harmonicFrequencies[k];
                 }
-                
                 terrHeights[i, j] = (float)(originalTerrainSectionHeight[i, j] * calculatedHeight * (float)(Math.Cos(Time.time * 2.5f)) + originalTerrainSectionHeight[i, j]);
-                
             }
         }
         terrainData.SetHeights(147, 168, terrHeights);
