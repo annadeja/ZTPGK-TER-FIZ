@@ -19,6 +19,7 @@ public class GoalBehavior : MonoBehaviour
         if(wasReached && Input.GetButtonDown("Restart"))
         {
             wasReached = false;
+            victoryText.enabled = false;
             var players = GameObject.FindGameObjectsWithTag("Player");
             if (players != null)
                 foreach (GameObject player in players)

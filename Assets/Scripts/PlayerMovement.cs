@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private Transform ball;
     private Vector3 displacement;
     private Vector3 startingPosition;
     private CharacterController charControl;
@@ -14,7 +13,6 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ball = gameObject.GetComponentInChildren<Transform>();
         charControl = gameObject.GetComponentInChildren<CharacterController>();
         displacement = new Vector3(0, 0, 0);
         startingPosition = transform.position;
